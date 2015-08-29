@@ -40,13 +40,15 @@ define(['Fluxxor','react-with-addons','JSXTransformer'],
       // Error loading the data for the component
       if (this.state.errorMessage) {
         return (
-          <div >
-            <div>
-              <img style={iconStyle} src={this.props.errorIcon} />
-              <span style={spanStyle}>{this.state.errorMessage}</span>
+          <div className="panel panel-primary">
+            <div className="panel-body">
+              <div>
+                <img style={iconStyle} src={this.props.errorIcon} />
+                <span style={spanStyle}>{this.state.errorMessage}</span>
+              </div>
+              <br/>
+              <button type="button" onClick={this.reloadData}>Reload</button>
             </div>
-            <br/>
-            <button type="button" onClick={this.reloadData}>Reload</button>
           </div>
         );
       }
@@ -61,7 +63,8 @@ define(['Fluxxor','react-with-addons','JSXTransformer'],
       // Component loaded correctly
       var locations = this.state.locations;
       return (
-        <div>
+        <div className="panel panel-primary">
+          <div className="panel-body">
           { this.state.loading ? loading : sucessfulIcon }
           <ul>
             {
@@ -71,6 +74,7 @@ define(['Fluxxor','react-with-addons','JSXTransformer'],
             }
           </ul>
           <button type="button" onClick={this.reloadData}>Reload</button>
+          </div>
         </div>
       );
     }

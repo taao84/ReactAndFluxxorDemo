@@ -28,9 +28,13 @@ define(['react-with-addons','JSXTransformer'], function(React, JSXTransformer) {
     },
     render: function(){
       return (
-        <div className="filter-list">
-          <input type="text" placeholder="Search" onChange={this.filterList}/>
-        <List items={this.state.items}/>
+        <div className="panel panel-primary">
+          <div className="panel-body">
+            <div className="filter-list">
+              <input type="text" placeholder="Search" onChange={this.filterList}/>
+              <List items={this.state.items}/>
+            </div>
+          </div>
         </div>
       );
     }

@@ -2,24 +2,29 @@ define(['react-with-addons'], function(React) {
   var NavBar = React.createClass({
     render : function() {
       return (
-        <div className="navbar navbar-inverse navbar-fixed-top">
-          <div className="navbar-inner">
-            <div className="container">
-              <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                <span className="icon-bar"></span>
-                <span className="icon-bar"></span>
+        <nav className="navbar navbar-inverse navbar-fixed-top">
+          <div className="container-fluid">
+            <div className="navbar-header">
+              <button type="button" className="navbar-toggle" aria-expanded="false">
+
                 <span className="icon-bar"></span>
               </button>
-              <a className="brand" href="#">Demo App - Reactjs, Fluxxor, Bootstrap</a>
-              <div className="nav-collapse collapse">
-                <ul className="nav">
-                  <li className="active"><a href="index.html">Home</a></li>
-                </ul>
-              </div>
+              <a className="navbar-brand" href="#">Demo App - Reactjs, Fluxxor, Bootstrap</a>
+            </div>
+
+            <div id="navbar-collapse">
+              <ul className="nav navbar-nav">
+                <li className="active"><a href="index.html">Home</a></li>
+              </ul>
             </div>
           </div>
-        </div>
+        </nav>
       );
     }
   });
+
+  return NavBar;
 })
+
+/*
+*/

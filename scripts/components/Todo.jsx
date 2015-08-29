@@ -30,22 +30,35 @@ define(['react-with-addons','JSXTransformer','Fluxxor','jsx!./TodoItem', 'TodoSt
 
     render: function() {
       var todos = this.state.todos;
+
+      var alignStyle = {
+        display: "inline-block",
+        verticalAlign: "middle",
+        float: "none"
+      }
+
       return (
         <div>
-          <ul>
-            {
-              Object.keys(todos).map(function(id) {
-                return <li key={id}><TodoItem todo={todos[id]} /></li>;
-              })
-            }
-          </ul>
-          <form onSubmit={this.onSubmitForm}>
-            <input type="text" size="30" placeholder="New Todo"
-                   value={this.state.newTodoText}
-                   onChange={this.handleTodoTextChange} />
-            <input type="submit" value="Add Todo" />
-          </form>
-          <button onClick={this.clearCompletedTodos}>Clear Completed</button>
+          <div className="panel panel-primary">
+            <div className="panel-body">
+              <form onSubmit={this.onSubmitForm} className="form-inline">
+                <input type="text" placeholder="New Todo"
+                         value={this.state.newTodoText}
+                         onChange={this.handleTodoTextChange}
+                         style={alignStyle}
+                         className="form-control inline" />
+                <input type="submit" value="Add Todo" className="btn btn-default inline" />
+              </form>
+              <button onClick={this.clearCompletedTodos} className="btn btn-default">Clear Completed</button>
+              <ul>
+                {
+                  Object.keys(todos).map(function(id) {
+                    return <li key={id}><TodoItem todo={todos[id]} /></li>;
+                  })
+                }
+              </ul>
+            </div>
+          </div>
         </div>
       );
     },

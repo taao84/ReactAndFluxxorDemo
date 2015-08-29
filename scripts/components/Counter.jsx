@@ -15,9 +15,11 @@ define(['Fluxxor','react-with-addons','JSXTransformer'],
     },
     render: function(){
       return (
-        <div class="my-component">
-          <h1>Count: {this.state.count}</h1>
-          <button type="button" onClick={this.incrementCount}>Increment</button>
+        <div className="panel panel-primary">
+          <div className="panel-body">
+            <h1>Count: {this.state.count}</h1>
+            <button type="button" onClick={this.incrementCount}>Increment</button>
+          </div>
         </div>
       );
     }
