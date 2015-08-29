@@ -8,7 +8,7 @@ define(['Fluxxor', 'LocationConstants'], function(Fluxxor, LocationConstants) {
       this.errorMessage = null;
 
       this.bindActions(
-        LocationConstants.LOAD_LOCATIONS, this.loadLocations,
+        LocationConstants.LOAD_LOCATIONS, this.loadingLocations,
         LocationConstants.FETCH_LOCATIONS_SUCCESS, this.fetchLocations,
         LocationConstants.FETCH_LOCATIONS_FAILED, this.fetchLocationsFailed
       );
@@ -22,8 +22,9 @@ define(['Fluxxor', 'LocationConstants'], function(Fluxxor, LocationConstants) {
       };
     },
 
-    loadLocations : function() {
+    loadingLocations : function() {
       this.loading = true;
+      this.errorMessage = null;
       this.emit("change");
     },
 

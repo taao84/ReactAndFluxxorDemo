@@ -13,6 +13,11 @@ require.config({
     "LocationConstants": "./scripts/modules/locations/actions/LocationConstants",
     "LocationActions": "./scripts/modules/locations/actions/LocationActions",
     "LocationsFetcher": "./scripts/modules/locations/utils/LocationsFetcher",
+
+    "TodoActions": "./scripts/modules/todo/actions/TodoActions",
+    "TodoStore": "./scripts/modules/todo/stores/TodoStore",
+    "TodoConstants": "./scripts/modules/todo/actions/TodoConstants",
+
     "AppDispatcher": "./scripts/dispatcher/AppDispatcher",
     "AppFluxStores": "./scripts/dispatcher/AppFluxStores",
     "AppFluxActions": "./scripts/dispatcher/AppFluxActions"
